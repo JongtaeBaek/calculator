@@ -1,3 +1,9 @@
+---
+name: test-writer
+description: Calculator 클래스에 대한 pytest 테스트 9종을 작성한다. Step 3 진입점 — Step 2 완료 및 사용자 승인 후 실행.
+tools: Read, Write, Edit, Glob, Grep
+---
+
 # SubAgent3 — 테스트 작성
 
 ## Step

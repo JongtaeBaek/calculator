@@ -25,12 +25,17 @@ calculator/
 ├── plan.md                              ← 개발 계획 및 SubAgent 파이프라인
 ├── PRD.md                               ← 요구사항 명세
 ├── CLAUDE.md                            ← Claude Code 가이드 (현재 파일)
-├── agents/
-│   ├── subagent1_doc_validation.md      ← [Phase 1] 문서 정합성 검증 지침
-│   ├── subagent2_ai_action.md           ← [Phase 2] 코드 구현 지침
-│   ├── subagent3_test_write.md          ← [Phase 3] 테스트 작성 지침
-│   ├── subagent3_test_verify.md         ← [Phase 4] 테스트 실행 검증 지침 (SubAgent4)
-│   └── subagent4_compliance_verify.md  ← [Phase 4] 요구사항 정합성 검증 지침 (SubAgent5)
+├── .claude/
+│   └── agents/
+│       ├── subagent1_doc_validation.md      ← [Phase 1] 문서 정합성 검증 지침
+│       ├── subagent2_ai_action.md           ← [Phase 2] 코드 구현 지침
+│       ├── subagent3_test_write.md          ← [Phase 3] 테스트 작성 지침
+│       ├── subagent3_test_verify.md         ← [Phase 4] 테스트 실행 검증 지침 (SubAgent4)
+│       ├── subagent4_compliance_verify.md   ← [Phase 4] 요구사항 정합성 검증 지침 (SubAgent5)
+│       ├── ai-action.md                     ← Verify Harness: AI Action 레이어
+│       ├── compliance-verifier.md           ← Verify Harness: Compliance Verifier
+│       ├── consistency-verifier.md          ← Verify Harness: Consistency Verifier
+│       └── test-verifier.md                 ← Verify Harness: Test Verifier
 ├── calculator/
 │   ├── __init__.py
 │   └── calculator.py
@@ -51,7 +56,7 @@ calculator/
 | Step 3 — 테스트 작성 | `test_calculator.py` 완성 | SubAgent3 | Step 3 결과 확인 후 Step 4 승인 |
 | Step 4 — 검증 | 테스트 통과 + 요구사항 충족 | SubAgent4 \|\| SubAgent5 (병렬) | Step 4 결과 확인 후 완료 승인 |
 
-전체 상세 흐름은 `plan.md` 참고. 각 SubAgent 지침은 `agents/` 디렉토리 참고.
+전체 상세 흐름은 `plan.md` 참고. 각 SubAgent 지침은 `.claude/agents/` 디렉토리 참고.
 
 ## Environment
 

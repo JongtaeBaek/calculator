@@ -1,3 +1,9 @@
+---
+name: compliance-checker
+description: 구현 코드가 PRD 요구사항 9개 항목을 모두 충족하는지 정적으로 검증한다. Step 4에서 test-runner와 병렬 실행.
+tools: Read, Glob, Grep
+---
+
 # SubAgent5 — Compliance Verify
 
 ## Step

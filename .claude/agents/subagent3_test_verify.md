@@ -1,3 +1,9 @@
+---
+name: test-runner
+description: pytest를 실행하여 모든 테스트 통과 여부를 검증한다. Step 4에서 compliance-checker와 병렬 실행.
+tools: Read, Glob, Grep, Bash
+---
+
 # SubAgent4 — Test Verify
 
 ## Step

@@ -1,3 +1,9 @@
+---
+name: doc-validator
+description: PRD.md와 CLAUDE.md 간의 정합성을 검증한다. Step 1 진입점 — 코드 구현 전에 반드시 실행해야 한다.
+tools: Read, Glob, Grep
+---
+
 # SubAgent1 — 문서 정합성 검증
 
 ## Step

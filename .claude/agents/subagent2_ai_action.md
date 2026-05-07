@@ -1,3 +1,9 @@
+---
+name: code-implementer
+description: PRD 요구사항에 따라 Calculator 클래스 소스 코드를 구현한다. Step 2 진입점 — Step 1 PASS 및 사용자 승인 후 실행.
+tools: Read, Write, Edit, Glob, Grep
+---
+
 # SubAgent2 — 코드 구현
 
 ## Step
