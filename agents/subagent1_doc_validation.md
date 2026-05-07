@@ -1,11 +1,11 @@
 # SubAgent1 — 문서 정합성 검증
 
-## Phase
-**Phase 1 — 문서 준비**
+## Step
+**Step 1 — 문서 준비**
 
 ## Cycle 규칙
 ```
-실행 → PASS: Phase 2(SubAgent2) 진입
+실행 → PASS: 사용자 검토 대기 → 승인 시 Step 2(SubAgent2) 진입
 실행 → FAIL: 불일치 항목 목록 보고 → CLAUDE.md 수정 → SubAgent1 재실행
 ```
 
@@ -37,4 +37,4 @@ FAIL 시 수정 필요 항목: (목록)
 ```
 
 ## 완료 조건
-전체 결과 PASS
+전체 결과 PASS → 사용자 검토 대기

@@ -26,10 +26,11 @@ calculator/
 ├── PRD.md                               ← 요구사항 명세
 ├── CLAUDE.md                            ← Claude Code 가이드 (현재 파일)
 ├── agents/
-│   ├── subagent1_doc_validation.md      ← 문서 정합성 검증 지침
-│   ├── subagent2_ai_action.md           ← 코드 구현 + 테스트 생성 지침
-│   ├── subagent3_test_verify.md         ← 테스트 실행 검증 지침
-│   └── subagent4_compliance_verify.md  ← 요구사항 정합성 검증 지침
+│   ├── subagent1_doc_validation.md      ← [Phase 1] 문서 정합성 검증 지침
+│   ├── subagent2_ai_action.md           ← [Phase 2] 코드 구현 지침
+│   ├── subagent3_test_write.md          ← [Phase 3] 테스트 작성 지침
+│   ├── subagent3_test_verify.md         ← [Phase 4] 테스트 실행 검증 지침 (SubAgent4)
+│   └── subagent4_compliance_verify.md  ← [Phase 4] 요구사항 정합성 검증 지침 (SubAgent5)
 ├── calculator/
 │   ├── __init__.py
 │   └── calculator.py
@@ -40,13 +41,15 @@ calculator/
 
 ## 개발 워크플로우
 
-개발은 `plan.md`에 정의된 3개 Phase로 진행한다. 각 Phase 안에서 SubAgent Cycle을 수행한다.
+개발은 `plan.md`에 정의된 하나의 Phase 안에서 4개 Step을 순차적으로 수행한다.
+각 Step 완료 후 **사용자 검토**를 거쳐야 다음 Step으로 진행한다.
 
-| Phase | 목표 | SubAgent | Cycle |
+| Step | 목표 | SubAgent | 사용자 검토 |
 |---|---|---|---|
-| Phase 1 — 문서 준비 | PRD ↔ CLAUDE.md 정합성 확보 | SubAgent1 | FAIL 시 CLAUDE.md 수정 후 재실행 |
-| Phase 2 — 구현 | 소스 코드 + 테스트 완성 | SubAgent2 | Phase 3 FAIL 시 롤백 후 재실행 |
-| Phase 3 — 검증 | 테스트 통과 + 요구사항 충족 | SubAgent3 \|\| SubAgent4 (병렬) | FAIL 시 Phase 2 롤백 |
+| Step 1 — 문서 준비 | PRD ↔ CLAUDE.md 정합성 확보 | SubAgent1 | Step 1 결과 확인 후 Step 2 승인 |
+| Step 2 — 코드 구현 | `calculator.py` 소스 완성 | SubAgent2 | Step 2 결과 확인 후 Step 3 승인 |
+| Step 3 — 테스트 작성 | `test_calculator.py` 완성 | SubAgent3 | Step 3 결과 확인 후 Step 4 승인 |
+| Step 4 — 검증 | 테스트 통과 + 요구사항 충족 | SubAgent4 \|\| SubAgent5 (병렬) | Step 4 결과 확인 후 완료 승인 |
 
 전체 상세 흐름은 `plan.md` 참고. 각 SubAgent 지침은 `agents/` 디렉토리 참고.
 

@@ -1,13 +1,13 @@
-# SubAgent4 — Compliance Verify
+# SubAgent5 — Compliance Verify
 
-## Phase
-**Phase 3 — 검증** *(SubAgent3와 병렬 실행)*
+## Step
+**Step 4 — 검증** *(SubAgent4와 병렬 실행)*
 
 ## Cycle 규칙
 ```
-SubAgent2 완료 후 SubAgent3와 동시에 실행
-→ PASS: SubAgent3도 PASS면 개발 완료
-→ FAIL: 미충족 항목 보고 → Phase 2(SubAgent2) 롤백 → Phase 3 재진입
+Step 3 완료 + 사용자 승인 후 SubAgent4와 동시에 실행
+→ PASS: SubAgent4도 PASS면 사용자 검토 대기
+→ FAIL: 미충족 항목 보고 → Step 2(SubAgent2) 롤백 → Step 3 재진입 → Step 4 재진입
 ```
 
 ## 역할
